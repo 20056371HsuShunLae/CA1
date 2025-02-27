@@ -21,7 +21,7 @@ stages:
     - task: Docker@2
       inputs:
         command: 'build'
-        dockerfile: 'Dockerfile'
+        dockerfile: 'dockerfile'
         repository: $(MY_DOCKER_IMAGE)
         tags: web_app
 
