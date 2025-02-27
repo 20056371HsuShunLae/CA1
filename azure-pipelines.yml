@@ -40,6 +40,4 @@ stages:
         runOptions: 'inline'
         inline: |
           docker load -i $(Pipeline.Workspace)/webapp.tar
-          docker stop my-web-app || true
-          docker rm my-web-app || true
           docker run -d -p 5000:5000 --name my-web-app $(MY_DOCKER_IMAGE):web_app
