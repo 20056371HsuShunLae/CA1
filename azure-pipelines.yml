@@ -28,12 +28,6 @@ stages:
     - script: |
         docker save -o $(Pipeline.Workspace)/webapp.tar $(MY_DOCKER_IMAGE):web_app
       displayName: 'Save Docker image to tar'
-        
-
-    - task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: '$(Pipeline.Workspace)/webapp.tar'
-        artifact: 'docker-image'
 
 - stage: Deploy
   jobs:
