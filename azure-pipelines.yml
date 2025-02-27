@@ -17,21 +17,21 @@ stages:
   jobs:
   - job: BuildingDockerFileAndPushToPipelineWorkSpace
     steps:
-    - task: BuildDockerApp
+    - task: Docker@2
       inputs:
         command: 'build'
         dockerfile: '**/Dockerfile'
         repository: $(MY_DOCKER_IMAGE)
         tags: web_app
 
-    - task: PushDockerAppToPipeLine
+    - task: Docker@2
       inputs:
         command: 'save'
         repository: $(MY_DOCKER_IMAGE)
         tags: latest
         outputFile: '$(Pipeline.Workspace)/webapp.tar'
 
-    - task: PublishPipelineArtifact
+    - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Pipeline.Workspace)/webapp.tar'
         artifact: 'docker-image'
