@@ -7,6 +7,9 @@ pool:
   name: 'PoolForEC2'
   vmImage: 'ubuntu-latest'
 
+variables:
+  MY_DOCKER_IMAGE: 'simple-web-app'  # My app name
+
 stages:
 - stage: Build
   jobs:
