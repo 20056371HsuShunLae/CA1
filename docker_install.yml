@@ -1,0 +1,18 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Update the instance to install updated packages
+      command: sudo yum update -y
+
+    - name: Install the most recent Docker Community Edition package
+      command: sudo yum install -y docker
+
+    - name: Start the Docker service
+      command: sudo service docker start
+
+    - name: Add the ec2-user to the docker group so that you can run Docker commands without using sudo
+      command: sudo usermod -a -G docker ec2-user
+
+    - name: Configure Docker to start on boot
+      command: sudo systemctl enable docker
+

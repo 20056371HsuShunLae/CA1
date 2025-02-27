@@ -1,0 +1,8 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Building docker file 
+      command: docker build -t simple-web .
+
+    - name: Running docker file
+      command: docker run -dit --name my-running-app-web -p 8080:80 simple-web
