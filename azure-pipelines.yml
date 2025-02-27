@@ -3,8 +3,8 @@ trigger:
     include:
       - main  # Trigger on push to main branch
 
-pool:
-  vmImage: 'PoolForEC2'
+pool: 'PoolForEC2'
+  vmImage: 'ubuntu'
 
 variables:
   MY_DOCKER_IMAGE: 'simple-web-app'  # My app name
