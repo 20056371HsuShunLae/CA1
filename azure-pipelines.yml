@@ -33,10 +33,6 @@ stages:
   jobs:
   - job: DeployToEC2
     steps:
-    - task: DownloadPipelineArtifact@2
-      inputs:
-        artifact: 'docker-image'
-        targetPath: '$(Pipeline.Workspace)'
 
     - task: SSH@0
       inputs:
