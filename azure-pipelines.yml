@@ -4,7 +4,7 @@ trigger:
       - main  # Trigger on push to main branch
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'PoolForEC2'
 
 variables:
   MY_DOCKER_IMAGE: 'simple-web-app'  # My app name
