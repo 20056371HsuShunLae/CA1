@@ -27,7 +27,7 @@ stages:
 
     - task: Docker@2
       inputs:
-        command: 'save'
+        command: 'save $(MY_DOCKER_IMAGE)'
         repository: $(MY_DOCKER_IMAGE)
         tags: latest
         outputFile: '$(Pipeline.Workspace)/webapp.tar'
