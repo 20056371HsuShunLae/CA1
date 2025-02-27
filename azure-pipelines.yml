@@ -47,7 +47,7 @@ stages:
 
     - task: SSH@0
       inputs:
-        sshEndpoint: 'EC2-SSH-Connection'
+        sshEndpoint: 'MyEC2SSHConnection'
         runOptions: 'inline'
         inline: |
           docker load -i $(Pipeline.Workspace)/webapp.tar
