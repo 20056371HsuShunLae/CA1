@@ -26,7 +26,7 @@ stages:
         tags: web_app
 
     - script: |
-        docker save -o $(Pipeline.Workspace)/app.tar $(DOCKER_IMAGE):latest
+        docker save -o $(Pipeline.Workspace)/app.tar $(MY_DOCKER_IMAGE):latest
       displayName: 'Save Docker image to tar'
         
 
